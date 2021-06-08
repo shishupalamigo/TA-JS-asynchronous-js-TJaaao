@@ -8,7 +8,7 @@ const followingUser = document.querySelector(".following");
 
 
 function handleChange (event) {
-    if (event.keyCode === 13) {
+    if (event.keyCode === 13 && input.value) {
         let user =  event.target.value;
         let xhr = new XMLHttpRequest();
 
@@ -21,7 +21,7 @@ xhr.onload = function () {
     bio.innerText = userData.bio;    
 }
 xhr.onerror = function () {
-    console.log("User Not Found");
+    console.error("Something Went Wrong");
 };
 xhr.send();
 
@@ -79,7 +79,7 @@ let catImage = document.querySelector(".cat-image");
 
 button.addEventListener('click', function() {
     let catApi = new XMLHttpRequest();
-    catApi.open("GET", "https://api.thecatapi.com/v1/images/search?limit=1&size=full")
+    catApi.open("GET", "https://api.thecatapi.com/v1/images/search?limit=1&size=full");
 
     catApi.onload = function () {
 
