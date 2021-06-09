@@ -191,10 +191,12 @@ body {
 }
 
 .article-container article span {
-  color: #01011b;
+  background: #012933;
+  color: #fdfdfd;
   font-size: 1rem;
   font-weight: 100;
-  padding-bottom: 1rem;
+  padding: .5rem;
+  border-radius: 5px;
 }
 
 .article-container article h2 {
@@ -202,6 +204,7 @@ body {
   font-weight: 700;
   color: #090920;
   padding-bottom: .5rem;
+  padding-top: .5rem;
 }
 
 .article-container article p {
@@ -211,9 +214,11 @@ body {
 }
 
 .article-container article a {
+  background: #10484d;
   text-decoration: none;
   color: white;
   font-size: .8rem;
   font-weight: 500;
+  padding: .5rem;
 }
 /*# sourceMappingURL=style.css.map */
