@@ -1,3 +1,5 @@
+// Promise that resolves after 1,2, 3 & 4 seconds with Random values
+
 let randomNumber = function () {
   return Math.floor(Math.random() * 100);
 };
@@ -23,6 +25,21 @@ let all = Promise.all([one, two, three, four])
   .then((res) => console.log(res))
   .catch((error) => console.error(error));
 
+// Feedback solution
+
+let times = [1, 2, 3, 4];
+
+let timesPromise = times.map(
+    (seconds) => {
+        return new Promise((res) => {
+            setTimeout(() => res(randomNumber()), seconds * 1000);
+        })
+    }
+);
+
+Promise.all(timesPromise).then(console.log);
+
+
 const userNames = [
     "shishupalamigo",
     "prank7",
@@ -38,12 +55,12 @@ const userData = Promise.all(
     })
 );
 
-const dog = fetch(`https://random.dog/woof.json`).then(woof => console.log(woof));
-const cat = fetch(`https://aws.random.cat/meow`).then(meow => console.log(meow));
+const dogPromise = fetch(`https://random.dog/woof.json`).then(res => res.json());
 
-let winner = Promise.race([dog, cat]);
+const catPromise = fetch(`https://aws.random.cat/meow`).then(res => res.json());
 
-console.log(winner);
+Promise.race([dogPromise, catPromise]).then(console.log);
+
 
 
 Promise.all([
