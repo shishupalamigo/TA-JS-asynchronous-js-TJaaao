@@ -1,0 +1,35 @@
+@import "reset";
+
+html{
+    font-size: 18px;
+}
+
+body {
+    line-height: 1.5;
+}
+
+.todo-items {
+   padding: .5rem;
+   font-size: 1.4rem;
+   justify-content: space-between;
+   .title-container {
+       display: flex;
+       align-items: center;
+       width: 80%;
+   }
+   .edit-Btn {
+       font-size: .5rem;
+       margin-left: .5rem;
+       justify-self: flex-end;
+   }
+   span {
+       font-size: 1rem;
+   } 
+}
+
+.update-input {
+    display: inline-block;
+    margin-left: 2rem;
+    padding: .5rem;
+}
+
